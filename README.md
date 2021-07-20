@@ -1,0 +1,1 @@
+This is a game programmed in JavaScript. It is a replication of the game rock, paper, scissors and allows the user to play against an algorithm that chooses one of the three options randomly. 
