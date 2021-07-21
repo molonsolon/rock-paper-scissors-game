@@ -1,9 +1,7 @@
-console.log("hello, world!");
+//Rock, Paper, Scissors game for The Odin Project
 
-// const playerSelection = prompt("Rock, Paper, or Scissors?","");
 
-// console.log(playerSelection);
-
+//computer's random array choice
 function computerPlay() {
     let choiceArray = [`Rock`, 
                     `Paper`, 
@@ -12,49 +10,22 @@ function computerPlay() {
         Math.floor(Math.random() * (choiceArray.length))];
    return randomChoice
 }
+
+//player choice entry
 function playerChoice() {
     return prompt(`Rock, Paper, or Scissors?`); 
 } 
 
-function game() {
-   
-
-    
-    let playerScore = 0;
-    let computerScore = 0;
-    let result;
-    
-    do {
-        alert(result =  playRound());
-    
-        if (result.includes("win")) {
-            playerScore++
-        } else if (result.includes("lose")) {
-            computerScore++
-        };
-    } while ((playerScore + computerScore) < 5);
-
-    console.log(computerScore);
-    console.log(playerScore);
-    
-    
-    if (computerScore > playerScore) {
-       return alert("Looks like your luck has run out... try again.")
-    } else if (computerScore < playerScore) {
-       return alert("Wow! You got lucky this time...")
-    } else {
-       return alert("A tie?? Let's give it another go, shall we?")
-    }
-    
-    
-}
-
+//individual round of R,P,S used within game() 
 function playRound() {
+    
+    //variable input using previous functions
     let playerSelection = playerChoice();
     console.log(playerSelection);
     let computerSelection = computerPlay();   
     console.log(computerSelection);
     
+    //string comparisons to declare winner
     if  ((playerSelection.toLowerCase() ===  `rock`) & (computerSelection === `Scissors`)) {
         return `Hooray! Rock smashes scissors. You win!`; 
     } else if ((playerSelection.toLowerCase() ===  `rock`) & (computerSelection === `Paper`)) {
@@ -80,26 +51,38 @@ function playRound() {
         }
 }
 
+//initiates a game of R,P,S that ends when both player's scores total 5. 
+function game() {
+   
 
+    //score variables
+    let playerScore = 0;
+    let computerScore = 0;
+    let result;
+    
+    //loop 5x
+    do {
+        alert(result =  playRound());
+    
+        if (result.includes("win")) {
+            playerScore++
+        } else if (result.includes("lose")) {
+            computerScore++
+        };
+    } while ((playerScore + computerScore) < 5);
 
+    console.log(computerScore);
+    console.log(playerScore);
+    
+    //winner alert
+    if (computerScore > playerScore) {
+       return alert("Looks like your luck has run out... try again.")
+    } else if (computerScore < playerScore) {
+       return alert("Wow! You got lucky this time...")
+    } else {
+       return alert("A tie?? Let's give it another go, shall we?")
+    }
+    
+    
+}
 
-
-
-
-
-//const playerSelection = `rock`;
-//const computerSelection = computerPlay();
-//console.log(playRound(playerSelection, computerSelection))
-
-
-
-
-
-
-// run a function called playRound that simulates RPS game
-//  if player chooses rock and computer chooses scissors, player loses
-// if player chooses rock and computer chooses paper, player wins
-// if player chooses scissors and computer chooses rock, player loses
-// if player chooses scissors and computer chooses paper, player wins
-// if player chooses paper and computer chooses scissors, player loses
-// if player chooses paper and computer chooses rock, player wins
