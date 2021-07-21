@@ -38,11 +38,15 @@ function game() {
     console.log(playerScore);
     
     
-
- //   return playerScore;
-   // return computerScore;
+    if (computerScore > playerScore) {
+       return alert("Looks like your luck has run out... try again.")
+    } else if (computerScore < playerScore) {
+       return alert("Wow! You got lucky this time...")
+    } else {
+       return alert("A tie?? Let's give it another go, shall we?")
+    }
     
- 
+    
 }
 
 function playRound() {
