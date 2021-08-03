@@ -11,19 +11,29 @@ function computerPlay() {
    return randomChoice
 }
 
-//player choice entry
-function playerChoice() {
-    return prompt(`Rock, Paper, or Scissors?`); 
-} 
+const rock = document.querySelector(`#rock`);
+const paper = document.querySelector(`#paper`);
+const scissors = document.querySelector(`#scissors`);
+const results = document.querySelector(`#results`);
+const gameChoice = document.getElementsByClassName(`.game-choice`);
+ 
+
+// ** write psuedo-code for this, getting too lost in the weeds
+// ** going by trial and error when i could be saving lots of time
+// ** reserch but don't just steal all code from s.o. answers
+const choiceEntry = function() {
+    const choice = this.getAttribute(`id`);
+}
+
+Array.from(gameChoice, e => { 
+    e.addEventListener(`click`, playRound(choiceEntry))
+});
+
 
 //individual round of R,P,S used within game() 
-function playRound() {
+function playRound(playerSelection) {
     
-    //variable input using previous functions
-    let playerSelection = playerChoice();
-    console.log(playerSelection);
-    let computerSelection = computerPlay();   
-    console.log(computerSelection);
+    const computerSelection = computerPlay();
     
     //string comparisons to declare winner
     if  ((playerSelection.toLowerCase() ===  `rock`) & (computerSelection === `Scissors`)) {
@@ -50,6 +60,8 @@ function playRound() {
         return `something has gone wrong`;
         }
 }
+
+
 
 //initiates a game of R,P,S that ends when both player's scores total 5. 
 function game() {
