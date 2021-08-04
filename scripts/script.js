@@ -17,17 +17,35 @@ const scissors = document.querySelector(`#scissors`);
 const results = document.querySelector(`#results`);
 const gameChoice = document.getElementsByClassName(`.game-choice`);
  
+rock.addEventListener(`click`, () => {
+    let playerScore = 0;
+    let computerScore = 0;
+    results.textContent = playRound(`rock`);
+    
+});
+
+paper.addEventListener(`click`, () => {
+    results.textContent = playRound(`paper`);
+});
+
+scissors.addEventListener(`click`, () => {
+    results.textContent = playRound(`scissors`);
+});
+
 
 // ** write psuedo-code for this, getting too lost in the weeds
 // ** going by trial and error when i could be saving lots of time
 // ** reserch but don't just steal all code from s.o. answers
-const choiceEntry = function() {
-    const choice = this.getAttribute(`id`);
-}
 
-Array.from(gameChoice, e => { 
-    e.addEventListener(`click`, playRound(choiceEntry))
-});
+// old code ideas... try some more maybe? need to have a function enter player selection
+// selected through recognizing id.
+//const choiceEntry = function() {
+//    const choice = this.getAttribute(`id`);
+//}
+
+//Array.from(gameChoice, e => { 
+//    e.addEventListener(`click`, playRound(choiceEntry))
+//});
 
 
 //individual round of R,P,S used within game() 
